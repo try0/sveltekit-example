@@ -23,8 +23,10 @@ jobs:
           node-version: 18
       - name: Install dependencies
         run: npm install
+        working-directory: ./spa-example
       - name: Build SvelteKit
         run: npm run build
+        working-directory: ./spa-example
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
