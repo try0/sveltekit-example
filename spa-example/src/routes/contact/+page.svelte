@@ -75,7 +75,7 @@
 <section class="pt-5 pb-5">
 	<form method="POST" use:enhance class="max-w-5xl m-auto p-3" in:fade>
 		<div class="mb-6">
-			<label for="organization" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+			<label for="organization" class="block mb-2 text-sm font-medium text-gray-900"
 				>団体名</label
 			>
 			<input
@@ -94,7 +94,7 @@
 		</div>
 
 		<div class="mb-6">
-			<label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+			<label for="name" class="block mb-2 text-sm font-medium text-gray-900"
 				>お名前<span class="text-red-300">＊</span></label
 			>
 			<input
@@ -111,7 +111,7 @@
 		</div>
 
 		<div class="mb-6">
-			<label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+			<label for="email" class="block mb-2 text-sm font-medium text-gray-900"
 				>メールアドレス<span class="text-red-300">＊</span></label
 			>
 			<input
@@ -128,7 +128,7 @@
 		</div>
 
 		<div class="mb-6">
-			<label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+			<label for="phone" class="block mb-2 text-sm font-medium text-gray-900"
 				>電話番号</label
 			>
 			<input
@@ -145,7 +145,7 @@
 		</div>
 
 		<div class="mb-6">
-			<label for="text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+			<label for="text" class="block mb-2 text-sm font-medium text-gray-900"
 				>問い合わせ内容<span class="text-red-300">＊</span></label
 			>
 			<textarea
@@ -177,34 +177,34 @@
 			<div class="mb-6">
 				<label
 					for="organization"
-					class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">団体名</label
+					class="block mb-2 text-sm font-medium text-gray-900">団体名</label
 				>
 				<span>{$form.organization}</span>
 			</div>
 
 			<div class="mb-6">
-				<label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+				<label for="name" class="block mb-2 text-sm font-medium text-gray-900 "
 					>お名前</label
 				>
 				<span>{$form.name}</span>
 			</div>
 
 			<div class="mb-6">
-				<label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+				<label for="email" class="block mb-2 text-sm font-medium text-gray-900"
 					>メールアドレス</label
 				>
 				<span>{$form.email}</span>
 			</div>
 
 			<div class="mb-6">
-				<label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+				<label for="phone" class="block mb-2 text-sm font-medium text-gray-900"
 					>電話番号</label
 				>
 				<span>{$form.phone}</span>
 			</div>
 
 			<div class="mb-6">
-				<label for="text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+				<label for="text" class="block mb-2 text-sm font-medium text-gray-900"
 					>問い合わせ内容</label
 				>
 				<span>{$form.text}</span>
