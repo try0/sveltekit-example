@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths';
 	import './styles.css';
 	import Icon from 'svelte-awesome';
 	import github from 'svelte-awesome/icons/github';
@@ -27,16 +28,16 @@
 					tabindex="0"
 					class="menu dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 bg-white text-primary"
 				>
-					<li><a href="/" >Home</a></li>
-					<li><a href="/contact" >Contact</a></li>
+					<li><a href="{base}/">Home</a></li>
+					<li><a href="{base}/contact">Contact</a></li>
 				</ul>
 			</div>
 			<span class="normal-case text-xl">Sveltekit Example</span>
 		</div>
 		<div class="navbar-center hidden lg:flex">
 			<ul class="menu menu-horizontal px-1">
-				<li><a href="/" class="hover:text-white">Home</a></li>
-				<li><a href="/contact" class="hover:text-white">Contact</a></li>
+				<li><a href="{base}/" class="hover:text-white">Home</a></li>
+				<li><a href="{base}/contact" class="hover:text-white">Contact</a></li>
 			</ul>
 		</div>
 		<div class="navbar-end">

@@ -73,7 +73,7 @@
 <h2 class="font-bold p-2">お問い合わせフォームサンプル</h2>
 
 <section class="pt-5 pb-5">
-	<form method="POST" use:enhance class="max-w-5xl m-auto p-2" in:fade>
+	<form method="POST" use:enhance class="max-w-5xl m-auto p-3" in:fade>
 		<div class="mb-6">
 			<label for="organization" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
 				>団体名</label
