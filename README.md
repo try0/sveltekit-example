@@ -1,5 +1,6 @@
 # sveltekit-example
 
+Sveltekit勉強用
 
 ## spa-example
 
