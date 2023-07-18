@@ -1,8 +1,19 @@
-<script>
+<script lang="ts">
 	import { base } from '$app/paths';
+	import { onMount } from 'svelte';
 	import './styles.css';
 	import Icon from 'svelte-awesome';
 	import github from 'svelte-awesome/icons/github';
+	import { goto } from '$app/navigation';
+
+	onMount(() => {
+		window.addEventListener('beforeunload', (e: BeforeUnloadEvent) => {
+			e.preventDefault();
+			e.returnValue = null;
+			goto(window.location.href);
+			return false;
+		});
+	});
 </script>
 
 <div class="app" data-theme="light">
