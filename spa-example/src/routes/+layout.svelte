@@ -5,12 +5,15 @@
 	import Icon from 'svelte-awesome';
 	import github from 'svelte-awesome/icons/github';
 	import { goto } from '$app/navigation';
+	import { createEventDispatcher } from 'svelte';
+
+	const dispatch = createEventDispatcher();
 
 	onMount(() => {
 		window.addEventListener('beforeunload', (e: BeforeUnloadEvent) => {
 			e.preventDefault();
 			e.returnValue = null;
-			goto(window.location.href);
+			dispatch('push', window.location.pathname);
 			return false;
 		});
 	});
