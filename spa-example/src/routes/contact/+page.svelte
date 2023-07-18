@@ -75,43 +75,39 @@
 <section class="pt-5 pb-5">
 	<form method="POST" use:enhance class="max-w-5xl m-auto p-3" in:fade>
 		<div class="mb-6">
-			<label for="organization" class="block mb-2 text-sm font-medium text-gray-900"
-				>団体名</label
-			>
+			<label for="organization" class="field-label">団体名</label>
 			<input
 				type="text"
 				id="organization"
 				bind:value={$form.organization}
 				aria-invalid={$errors.organization ? 'true' : undefined}
-				class="input input-bordered bg-gray-50 w-full"
+				class="form-text"
 				placeholder="所属する会社名、団体名等"
 			/>
 			{#if $errors.organization}
-				<div class="invalid text-red-600 pt-1.5" in:fade>
+				<div class="field-error" in:fade>
 					{$errors.organization}
 				</div>
 			{/if}
 		</div>
 
 		<div class="mb-6">
-			<label for="name" class="block mb-2 text-sm font-medium text-gray-900"
-				>お名前<span class="text-red-300">＊</span></label
-			>
+			<label for="name" class="field-label">お名前<span class="text-red-300">＊</span></label>
 			<input
 				type="text"
 				id="name"
 				bind:value={$form.name}
 				aria-invalid={$errors.name ? 'true' : undefined}
-				class="input input-bordered bg-gray-50 w-full"
+				class="form-text"
 				placeholder="お名前"
 			/>
 			{#if $errors.name}
-				<div class="invalid text-red-600 pt-1.5" in:fade>{$errors.name}</div>
+				<div class="field-error" in:fade>{$errors.name}</div>
 			{/if}
 		</div>
 
 		<div class="mb-6">
-			<label for="email" class="block mb-2 text-sm font-medium text-gray-900"
+			<label for="email" class="field-label"
 				>メールアドレス<span class="text-red-300">＊</span></label
 			>
 			<input
@@ -119,33 +115,31 @@
 				id="email"
 				bind:value={$form.email}
 				aria-invalid={$errors.email ? 'true' : undefined}
-				class="input input-bordered bg-gray-50 w-full"
+				class="form-text"
 				placeholder="name@example.com"
 			/>
 			{#if $errors.email}
-				<div class="invalid text-red-600 pt-1.5" in:fade>{$errors.email}</div>
+				<div class="field-error" in:fade>{$errors.email}</div>
 			{/if}
 		</div>
 
 		<div class="mb-6">
-			<label for="phone" class="block mb-2 text-sm font-medium text-gray-900"
-				>電話番号</label
-			>
+			<label for="phone" class="field-label">電話番号</label>
 			<input
 				type="text"
 				id="phone"
 				bind:value={$form.phone}
 				aria-invalid={$errors.phone ? 'true' : undefined}
-				class="input input-bordered bg-gray-50 w-full"
+				class="form-text"
 				placeholder="電話番号"
 			/>
 			{#if $errors.phone}
-				<div class="invalid text-red-600 pt-1.5" in:fade>{$errors.phone}</div>
+				<div class="field-error" in:fade>{$errors.phone}</div>
 			{/if}
 		</div>
 
 		<div class="mb-6">
-			<label for="text" class="block mb-2 text-sm font-medium text-gray-900"
+			<label for="text" class="field-label"
 				>問い合わせ内容<span class="text-red-300">＊</span></label
 			>
 			<textarea
@@ -153,10 +147,10 @@
 				bind:value={$form.text}
 				aria-invalid={$errors.text ? 'true' : undefined}
 				rows="8"
-				class="textarea textarea-bordered bg-gray-50 w-full"
+				class="form-textarea"
 			/>
 			{#if $errors.text}
-				<div class="invalid text-red-600 pt-1.5" in:fade>{$errors.text}</div>
+				<div class="field-error" in:fade>{$errors.text}</div>
 			{/if}
 		</div>
 		<div class="mb-6 text-center">
@@ -175,38 +169,27 @@
 
 		<div>
 			<div class="mb-6">
-				<label
-					for="organization"
-					class="block mb-2 text-sm font-medium text-gray-900">団体名</label
-				>
+				<label for="organization" class="field-label">団体名</label>
 				<span>{$form.organization}</span>
 			</div>
 
 			<div class="mb-6">
-				<label for="name" class="block mb-2 text-sm font-medium text-gray-900 "
-					>お名前</label
-				>
+				<label for="name" class="field-label">お名前</label>
 				<span>{$form.name}</span>
 			</div>
 
 			<div class="mb-6">
-				<label for="email" class="block mb-2 text-sm font-medium text-gray-900"
-					>メールアドレス</label
-				>
+				<label for="email" class="field-label">メールアドレス</label>
 				<span>{$form.email}</span>
 			</div>
 
 			<div class="mb-6">
-				<label for="phone" class="block mb-2 text-sm font-medium text-gray-900"
-					>電話番号</label
-				>
+				<label for="phone" class="field-label">電話番号</label>
 				<span>{$form.phone}</span>
 			</div>
 
 			<div class="mb-6">
-				<label for="text" class="block mb-2 text-sm font-medium text-gray-900"
-					>問い合わせ内容</label
-				>
+				<label for="text" class="field-label">問い合わせ内容</label>
 				<span>{$form.text}</span>
 			</div>
 		</div>
@@ -218,4 +201,30 @@
 </dialog>
 
 <style lang="postcss">
+	.field-label {
+		@apply block;
+		@apply mb-2;
+		@apply text-sm;
+		@apply font-medium;
+		@apply text-gray-900;
+	}
+
+	.form-textarea {
+		@apply textarea;
+		@apply textarea-bordered;
+		@apply bg-gray-50;
+		@apply w-full;
+	}
+
+	.form-text {
+		@apply input;
+		@apply input-bordered;
+		@apply bg-gray-50;
+		@apply w-full;
+	}
+
+	.field-error {
+		@apply text-red-600;
+		@apply pt-1.5;
+	}
 </style>
