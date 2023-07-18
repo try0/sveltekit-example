@@ -3,7 +3,13 @@
 
 <head>
     <script>
-        window.location.href = "/sveltekit-example";
+
+        let referer = window.location.referer;
+        let to = "/sveltekit-example";
+        if (referer) {
+            to += "?ref=" + new URL(referer).pathname;
+        }
+        window.location.href = to
     </script>
 </head>
 

@@ -13,7 +13,7 @@
 		window.addEventListener('beforeunload', (e: BeforeUnloadEvent) => {
 			e.preventDefault();
 			e.returnValue = null;
-			dispatch('push', window.location.pathname);
+			goto(window.location.pathname);
 			return false;
 		});
 	});
