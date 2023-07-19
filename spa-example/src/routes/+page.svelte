@@ -3,6 +3,12 @@
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 
+	onMount(() => {
+		const navigateToPath = $page.url.searchParams.get("nav_to");
+		if (navigateToPath) {
+			goto(navigateToPath);
+		}
+	});
 
 </script>
 
