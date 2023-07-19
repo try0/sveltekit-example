@@ -7,5 +7,6 @@ Sveltekit勉強用
 
 ## spa-example
 
-* [daisyUI (tailwindcssベース)](https://daisyui.com/)
-* [sveltekit-superforms (zodベース)](https://superforms.rocks/)
+* スタイル：[daisyUI (tailwindcssベース)](https://daisyui.com/)
+* フォーム類：[sveltekit-superforms (zodベース)](https://superforms.rocks/)
+* 国際化：[i18next](https://www.i18next.com/), [zod-i18n](https://github.com/aiji42/zod-i18n)
