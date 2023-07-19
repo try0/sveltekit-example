@@ -1,0 +1,33 @@
+{
+    "send": "送信",
+    "cancel": "キャンセル",
+    "confirm": "確認",
+    "company_name": "会社名",
+    "lang": "言語",
+    "lang_name": {
+        "en": "English",
+        "ja": "日本語"
+    },
+    "nav": {
+        "home": "ホーム",
+        "contact": "問い合わせ"
+    },
+    "home": {
+        "title": "ホーム"
+    },
+    "contact": {
+        "title": "フォームサンプル",
+        "organization": "団体名",
+        "name": "お名前",
+        "email": "メールアドレス",
+        "phone": "電話番号",
+        "text": "問い合わせ内容",
+        "organization_ph": "団体名",
+        "name_ph": "お名前",
+        "email_ph": "name@example.com",
+        "phone_ph": "電話番号",
+        "text_ph": "問い合わせ内容",
+        "confirm": "確認",
+        "confirm_message": "以下内容で送信します。よろしいですか？"
+    }
+}

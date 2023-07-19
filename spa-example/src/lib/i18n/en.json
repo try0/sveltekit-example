@@ -1,0 +1,33 @@
+{
+    "send": "Send",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "company_name": "Company Name",
+    "lang": "Lang",
+    "lang_name": {
+        "en": "English",
+        "ja": "Japanese"
+    },
+    "nav": {
+        "home": "Home",
+        "contact": "Contact"
+    },
+    "home": {
+        "title": "Home"
+    },
+    "contact": {
+        "title": "Sample Form",
+        "organization": "Organization Name",
+        "name":"Name",
+        "email": "EMail Address",
+        "phone": "Phone Number",
+        "text": "Text",
+        "organization_ph": "Organization Name",
+        "name_ph":"Name",
+        "email_ph": "name@example.com",
+        "phone_ph": "Phone Number",
+        "text_ph": "Text",
+        "confirm": "Confirm",
+        "confirm_message": "Are you sure to send the below contents?"
+    }
+}

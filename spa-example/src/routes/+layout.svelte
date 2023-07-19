@@ -6,6 +6,13 @@
 	import github from 'svelte-awesome/icons/github';
 	import { goto } from '$app/navigation';
 	import { createEventDispatcher } from 'svelte';
+	import { str, i18n } from '$lib/i18n/i18n';
+
+	onMount(() => {
+		i18n.init();
+	});
+
+
 </script>
 
 <div class="app" data-theme="light">
@@ -31,19 +38,33 @@
 					tabindex="0"
 					class="menu dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 bg-white text-primary"
 				>
-					<li><a href="{base}/">Home</a></li>
-					<li><a href="{base}/contact">Contact</a></li>
+					<li><a href="{base}/">{$str('nav.home', "ホーム")}</a></li>
+					<li><a href="{base}/contact">{$str('nav.contact', "問い合わせ")}</a></li>
 				</ul>
 			</div>
 			<span class="normal-case text-xl">Sveltekit Example</span>
 		</div>
 		<div class="navbar-center hidden lg:flex">
 			<ul class="menu menu-horizontal px-1">
-				<li><a href="{base}/" class="hover:text-white">Home</a></li>
-				<li><a href="{base}/contact" class="hover:text-white">Contact</a></li>
+				<li><a href="{base}/" class="hover:text-white">{$str('nav.home', "ホーム")}</a></li>
+				<li><a href="{base}/contact" class="hover:text-white">{$str('nav.contact', "問い合わせ")}</a></li>
 			</ul>
 		</div>
 		<div class="navbar-end">
+			<ul class="menu menu-horizontal px-1">
+				<li>
+					<div class="dropdown dropdown-bottom dropdown-end hover:text-white">
+						<a tabindex="0" class="" href="#">{$str("lang", "言語")}</a>
+						<ul
+							tabindex="0"
+							class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 bg-white text-primary"
+						>
+							<li><a on:click={() => i18n.change('ja')}>{$str("lang_name.ja", "日本語")}</a></li>
+							<li><a on:click={() => i18n.change('en')}>{$str("lang_name.en", "English")}</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
 			<a class="btn btn-sm btn-circle text-primary" href="https://github.com/try0/sveltekit-example"
 				><Icon data={github} scale={1.5} /></a
 			>
@@ -57,7 +78,7 @@
 	<footer class="footer footer-center p-10 bg-gray-800 text-primary-content">
 		<div>
 			<p class="font-bold">
-				フッター <br />会社名とか
+				{$str("company_name")}
 			</p>
 			<p>Copyright © 2023 - All right reserved</p>
 		</div>

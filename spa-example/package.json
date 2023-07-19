@@ -43,6 +43,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"i18next": "^23.2.11",
 		"svelte-awesome": "^3.2.1"
 	}
 }
