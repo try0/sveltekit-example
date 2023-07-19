@@ -4,7 +4,6 @@
 	import { z } from 'zod';
 	import { str } from '$lib/i18n/i18n';
 
-
 	/**
 	 * フォームスキーマ
 	 */
@@ -14,11 +13,7 @@
 		// お名前
 		name: z.string().min(1).max(100),
 		// メール
-		email: z
-			.string()
-			.email()
-			.min(1)
-			.max(1000),
+		email: z.string().email().min(1).max(1000),
 		// 電話番号
 		phone: z
 			.string()
@@ -30,12 +25,9 @@
 
 				const re = new RegExp('^[0-9-]+$');
 				return re.test(v);
-			}, $str("validation_message.phone_format")),
+			}, $str('validation_message.phone_format')),
 		// 問い合わせ内容
-		text: z
-			.string()
-			.min(1)
-			.max(5000)
+		text: z.string().min(1).max(5000)
 	});
 
 	/**
@@ -68,23 +60,23 @@
 </script>
 
 <svelte:head>
-	<title>{$str("contact.title", "フォームサンプル")}</title>
-	<meta name="description" content="{$str("contact.title", "フォームサンプル")}" />
+	<title>{$str('contact.title', 'フォームサンプル')}</title>
+	<meta name="description" content={$str('contact.title', 'フォームサンプル')} />
 </svelte:head>
 
-<h2 class="font-bold p-2">{$str("contact.title", "フォームサンプル")}</h2>
+<h2 class="font-bold p-2">{$str('contact.title', 'フォームサンプル')}</h2>
 
 <section class="pt-5 pb-5">
 	<form method="POST" use:enhance class="max-w-5xl m-auto p-3" in:fade>
 		<div class="mb-6">
-			<label for="organization" class="field-label">{$str("contact.organization", "団体名")}</label>
+			<label for="organization" class="field-label">{$str('contact.organization', '団体名')}</label>
 			<input
 				type="text"
 				id="organization"
 				bind:value={$form.organization}
 				aria-invalid={$errors.organization ? 'true' : undefined}
 				class="form-text"
-				placeholder="{$str("contact.organization_ph")}"
+				placeholder={$str('contact.organization_ph')}
 			/>
 			{#if $errors.organization}
 				<div class="field-error" in:fade>
@@ -94,14 +86,16 @@
 		</div>
 
 		<div class="mb-6">
-			<label for="name" class="field-label">{$str("contact.name", "お名前")}<span class="text-red-300">＊</span></label>
+			<label for="name" class="field-label"
+				>{$str('contact.name', 'お名前')}<span class="text-red-300">＊</span></label
+			>
 			<input
 				type="text"
 				id="name"
 				bind:value={$form.name}
 				aria-invalid={$errors.name ? 'true' : undefined}
 				class="form-text"
-				placeholder="{$str("contact.name_ph")}"
+				placeholder={$str('contact.name_ph')}
 			/>
 			{#if $errors.name}
 				<div class="field-error" in:fade>{$errors.name}</div>
@@ -110,7 +104,7 @@
 
 		<div class="mb-6">
 			<label for="email" class="field-label"
-				>{$str("contact.email", "メールアドレス")}<span class="text-red-300">＊</span></label
+				>{$str('contact.email', 'メールアドレス')}<span class="text-red-300">＊</span></label
 			>
 			<input
 				type="email"
@@ -118,7 +112,7 @@
 				bind:value={$form.email}
 				aria-invalid={$errors.email ? 'true' : undefined}
 				class="form-text"
-				placeholder="{$str("contact.email_ph")}"
+				placeholder={$str('contact.email_ph')}
 			/>
 			{#if $errors.email}
 				<div class="field-error" in:fade>{$errors.email}</div>
@@ -126,14 +120,14 @@
 		</div>
 
 		<div class="mb-6">
-			<label for="phone" class="field-label">{$str("contact.phone", "電話番号")}</label>
+			<label for="phone" class="field-label">{$str('contact.phone', '電話番号')}</label>
 			<input
 				type="text"
 				id="phone"
 				bind:value={$form.phone}
 				aria-invalid={$errors.phone ? 'true' : undefined}
 				class="form-text"
-				placeholder="{$str("contact.phone_ph")}"
+				placeholder={$str('contact.phone_ph')}
 			/>
 			{#if $errors.phone}
 				<div class="field-error" in:fade>{$errors.phone}</div>
@@ -142,14 +136,14 @@
 
 		<div class="mb-6">
 			<label for="text" class="field-label"
-				>{$str("contact.text", "問い合わせ内容")}<span class="text-red-300">＊</span></label
+				>{$str('contact.text', '問い合わせ内容')}<span class="text-red-300">＊</span></label
 			>
 			<textarea
 				id="text"
 				bind:value={$form.text}
 				aria-invalid={$errors.text ? 'true' : undefined}
 				rows="8"
-				placeholder="{$str("contact.text_ph")}"
+				placeholder={$str('contact.text_ph')}
 				class="form-textarea"
 			/>
 			{#if $errors.text}
@@ -157,48 +151,48 @@
 			{/if}
 		</div>
 		<div class="mb-6 text-center">
-			<button class="btn btn-primary btn-wide">{$str("contact.confirm", "確認")}</button>
+			<button class="btn btn-primary btn-wide">{$str('contact.confirm', '確認')}</button>
 		</div>
 	</form>
 </section>
 
 <dialog id="my_modal_4" class="modal" bind:this={dialog}>
 	<div class="modal-box">
-		<h3 class="font-bold text-lg">{$str("contact.confirm", "確認")}</h3>
-		<p class="py-2">{$str("contact.confirm_message", "以下内容で送信します。よろしいですか？")}</p>
+		<h3 class="font-bold text-lg">{$str('contact.confirm', '確認')}</h3>
+		<p class="py-2">{$str('contact.confirm_message', '以下内容で送信します。よろしいですか？')}</p>
 		<div class="py-2">
 			<hr />
 		</div>
 
 		<div>
 			<div class="mb-6">
-				<label for="organization" class="field-label">{$str("contact.organization")}</label>
+				<label for="organization" class="field-label">{$str('contact.organization')}</label>
 				<span>{$form.organization}</span>
 			</div>
 
 			<div class="mb-6">
-				<label for="name" class="field-label">{$str("contact.name")}</label>
+				<label for="name" class="field-label">{$str('contact.name')}</label>
 				<span>{$form.name}</span>
 			</div>
 
 			<div class="mb-6">
-				<label for="email" class="field-label">{$str("contact.email")}</label>
+				<label for="email" class="field-label">{$str('contact.email')}</label>
 				<span>{$form.email}</span>
 			</div>
 
 			<div class="mb-6">
-				<label for="phone" class="field-label">{$str("contact.phone")}</label>
+				<label for="phone" class="field-label">{$str('contact.phone')}</label>
 				<span>{$form.phone}</span>
 			</div>
 
 			<div class="mb-6">
-				<label for="text" class="field-label">{$str("contact.text")}</label>
+				<label for="text" class="field-label">{$str('contact.text')}</label>
 				<span>{$form.text}</span>
 			</div>
 		</div>
 		<div class="modal-action">
-			<button class="btn btn-primary w-32" on:click={sendFormData}>{$str("send", "送信")}</button>
-			<button class="btn" on:click={closeConfirmDialog}>{$str("cancel", "キャンセル")}</button>
+			<button class="btn btn-primary w-32" on:click={sendFormData}>{$str('send', '送信')}</button>
+			<button class="btn" on:click={closeConfirmDialog}>{$str('cancel', 'キャンセル')}</button>
 		</div>
 	</div>
 </dialog>
@@ -224,6 +218,16 @@
 		@apply input-bordered;
 		@apply bg-gray-50;
 		@apply w-full;
+	}
+
+	.form-text[aria-invalid='true'] {
+		@apply input-error;
+		@apply bg-red-50;
+	}
+
+	.form-textarea[aria-invalid='true'] {
+		@apply textarea-error;
+		@apply bg-red-50;
 	}
 
 	.field-error {
