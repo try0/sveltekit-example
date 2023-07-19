@@ -12,7 +12,14 @@
 		i18n.init();
 	});
 
+	function onChangeLanguage(lang: string): void {
+		if (lang !== 'ja' && lang !== 'en') {
+			lang = 'ja';
+		}
 
+		i18n.change(lang);
+		window.location.href = window.location.href;
+	}
 </script>
 
 <div class="app" data-theme="light">
@@ -38,29 +45,35 @@
 					tabindex="0"
 					class="menu dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 bg-white text-primary"
 				>
-					<li><a href="{base}/">{$str('nav.home', "ホーム")}</a></li>
-					<li><a href="{base}/contact">{$str('nav.contact', "問い合わせ")}</a></li>
+					<li><a href="{base}/">{$str('nav.home', 'ホーム')}</a></li>
+					<li><a href="{base}/contact">{$str('nav.contact', '問い合わせ')}</a></li>
 				</ul>
 			</div>
 			<span class="normal-case text-xl">Sveltekit Example</span>
 		</div>
 		<div class="navbar-center hidden lg:flex">
 			<ul class="menu menu-horizontal px-1">
-				<li><a href="{base}/" class="hover:text-white">{$str('nav.home', "ホーム")}</a></li>
-				<li><a href="{base}/contact" class="hover:text-white">{$str('nav.contact', "問い合わせ")}</a></li>
+				<li><a href="{base}/" class="hover:text-white">{$str('nav.home', 'ホーム')}</a></li>
+				<li>
+					<a href="{base}/contact" class="hover:text-white">{$str('nav.contact', '問い合わせ')}</a>
+				</li>
 			</ul>
 		</div>
 		<div class="navbar-end">
 			<ul class="menu menu-horizontal px-1">
 				<li>
 					<div class="dropdown dropdown-bottom dropdown-end hover:text-white">
-						<a tabindex="0" class="" href="#">{$str("lang", "言語")}</a>
+						<a tabindex="0" class="" href="#">{$str('lang', '言語')}</a>
 						<ul
 							tabindex="0"
 							class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 bg-white text-primary"
 						>
-							<li><a on:click={() => i18n.change('ja')}>{$str("lang_name.ja", "日本語")}</a></li>
-							<li><a on:click={() => i18n.change('en')}>{$str("lang_name.en", "English")}</a></li>
+							<li>
+								<a on:click={() => onChangeLanguage('ja')}>{$str('lang_name.ja', '日本語')}</a>
+							</li>
+							<li>
+								<a on:click={() => onChangeLanguage('en')}>{$str('lang_name.en', 'English')}</a>
+							</li>
 						</ul>
 					</div>
 				</li>
@@ -78,7 +91,7 @@
 	<footer class="footer footer-center p-10 bg-gray-800 text-primary-content">
 		<div>
 			<p class="font-bold">
-				{$str("company_name")}
+				{$str('company_name')}
 			</p>
 			<p>Copyright © 2023 - All right reserved</p>
 		</div>
