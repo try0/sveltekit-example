@@ -4,6 +4,7 @@
 	import { z } from 'zod';
 	import { str } from '$lib/i18n/i18n';
 
+
 	/**
 	 * フォームスキーマ
 	 */
@@ -11,17 +12,17 @@
 		// 団体
 		organization: z.string(),
 		// お名前
-		name: z.string().min(1, 'お名前を入力してください').max(100, '100文字以下で入力してください'),
+		name: z.string().min(1).max(100),
 		// メール
 		email: z
 			.string()
-			.email('メールアドレスに誤りがあります')
-			.min(1, 'メールアドレスを入力してください')
-			.max(1000, '1000文字以下で入力してください'),
+			.email()
+			.min(1)
+			.max(1000),
 		// 電話番号
 		phone: z
 			.string()
-			.max(100, '100文字以下で入力してください')
+			.max(100)
 			.refine((v) => {
 				if (!v) {
 					return true;
@@ -29,12 +30,12 @@
 
 				const re = new RegExp('^[0-9-]+$');
 				return re.test(v);
-			}, '半角数字またはハイフン(-)を入力してください'),
+			}, $str("validation_message.phone_format")),
 		// 問い合わせ内容
 		text: z
 			.string()
-			.min(1, '問い合わせ内容を入力してください')
-			.max(5000, '5000文字以下で入力してください')
+			.min(1)
+			.max(5000)
 	});
 
 	/**

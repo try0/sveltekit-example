@@ -8,6 +8,9 @@
         "en": "English",
         "ja": "日本語"
     },
+    "validation_message": {
+        "phone_format": "半角数字またはハイフン(-)を入力してください"
+    },
     "nav": {
         "home": "ホーム",
         "contact": "問い合わせ"

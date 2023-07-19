@@ -44,6 +44,7 @@
 	"type": "module",
 	"dependencies": {
 		"i18next": "^23.2.11",
-		"svelte-awesome": "^3.2.1"
+		"svelte-awesome": "^3.2.1",
+		"zod-i18n-map": "^2.13.2"
 	}
 }

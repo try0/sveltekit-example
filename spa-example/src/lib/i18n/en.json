@@ -8,6 +8,10 @@
         "en": "English",
         "ja": "Japanese"
     },
+    "validation_message": {
+        "phone_format": "Enter half-width numbers or hyphens (-)"
+    },
+
     "nav": {
         "home": "Home",
         "contact": "Contact"
