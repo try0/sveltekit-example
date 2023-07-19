@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "spa-example",
+            "url": "http://localhost:5173",
+            "webRoot": "${workspaceFolder}/spa-example",
+            "skipFiles": [
+                "${workspaceFolder}/spa-example/node_modules/**/*.js",
+                "${workspaceFolder}/spa-example/.svelte-kit/**/*.*",
+            ]
+        },
+    ],
+    "compounds": [
+        {
+            "name": "All",
+            "configurations": [
+                "spa-example"
+            ],
+            "preLaunchTask": "${defaultBuildTask}",
+            "stopAll": true
+        },
+    ]
+}
