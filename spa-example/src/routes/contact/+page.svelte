@@ -67,7 +67,14 @@
 <h2 id="formName" class="font-bold p-2">{$str('contact.title', 'フォームサンプル')}</h2>
 
 <section class="pt-5 pb-5">
-	<form method="POST" use:enhance class="max-w-5xl m-auto p-3" in:fade aria-labelledby="formName">
+	<form
+		method="POST"
+		use:enhance
+		class="max-w-5xl m-auto p-3"
+		in:fade
+		aria-labelledby="formName"
+		novalidate
+	>
 		<div class="mb-6">
 			<label for="organization" class="field-label">{$str('contact.organization', '団体名')}</label>
 			<input
@@ -75,7 +82,7 @@
 				id="organization"
 				bind:value={$form.organization}
 				aria-invalid={$errors.organization ? 'true' : undefined}
-				aria-describedby="{$errors.organization ? "error-msg-organization" : undefined}"
+				aria-describedby={$errors.organization ? 'error-msg-organization' : undefined}
 				class="form-text"
 				placeholder={$str('contact.organization_ph')}
 			/>
@@ -94,8 +101,10 @@
 				type="text"
 				id="name"
 				bind:value={$form.name}
+				required
+				aria-required="true"
 				aria-invalid={$errors.name ? 'true' : undefined}
-				aria-describedby="{$errors.name ? "error-msg-name" : undefined}"
+				aria-describedby={$errors.name ? 'error-msg-name' : undefined}
 				class="form-text"
 				placeholder={$str('contact.name_ph')}
 			/>
@@ -111,9 +120,11 @@
 			<input
 				type="email"
 				id="email"
+				required
+				aria-required="true"
 				bind:value={$form.email}
 				aria-invalid={$errors.email ? 'true' : undefined}
-				aria-describedby="{$errors.email ? "error-msg-email" : undefined}"
+				aria-describedby={$errors.email ? 'error-msg-email' : undefined}
 				class="form-text"
 				placeholder={$str('contact.email_ph')}
 			/>
@@ -129,7 +140,7 @@
 				id="phone"
 				bind:value={$form.phone}
 				aria-invalid={$errors.phone ? 'true' : undefined}
-				aria-describedby="{$errors.phone ? "error-msg-phone" : undefined}"
+				aria-describedby={$errors.phone ? 'error-msg-phone' : undefined}
 				class="form-text"
 				placeholder={$str('contact.phone_ph')}
 			/>
@@ -145,8 +156,10 @@
 			<textarea
 				id="text"
 				bind:value={$form.text}
+				required
+				aria-required="true"
 				aria-invalid={$errors.text ? 'true' : undefined}
-				aria-describedby="{$errors.text ? "error-msg-text" : undefined}"
+				aria-describedby={$errors.text ? 'error-msg-text' : undefined}
 				rows="8"
 				placeholder={$str('contact.text_ph')}
 				class="form-textarea"
