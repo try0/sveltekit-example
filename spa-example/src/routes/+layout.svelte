@@ -47,6 +47,7 @@
 				>
 					<li><a href="{base}/">{$str('nav.home', 'ホーム')}</a></li>
 					<li><a href="{base}/contact">{$str('nav.contact', '問い合わせ')}</a></li>
+					<li><a href="{base}/svelvet">{$str('nav.svelvet', 'Svelvet')}</a></li>
 				</ul>
 			</div>
 			<span class="normal-case text-xl">Sveltekit Example</span>
@@ -57,6 +58,8 @@
 				<li>
 					<a href="{base}/contact" class="hover:text-white">{$str('nav.contact', '問い合わせ')}</a>
 				</li>
+				
+				<li><a href="{base}/svelvet">{$str('nav.svelvet', 'Svelvet')}</a></li>
 			</ul>
 		</div>
 		<div class="navbar-end">

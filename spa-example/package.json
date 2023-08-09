@@ -45,6 +45,7 @@
 	"dependencies": {
 		"i18next": "^23.2.11",
 		"svelte-awesome": "^3.2.1",
+		"svelvet": "^8.1.0",
 		"zod-i18n-map": "^2.13.2"
 	}
 }
