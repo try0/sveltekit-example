@@ -5,9 +5,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "svelvet-issue" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "svelvet-issue" ]
     
 permissions:
   contents: read
