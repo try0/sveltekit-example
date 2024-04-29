@@ -1,0 +1,8 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteBase /sveltekit-example
+	RewriteRule ^/sveltekit-example/index\.html$ - [L]
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule . /sveltekit-example/index.html [L]
+</IfModule>
