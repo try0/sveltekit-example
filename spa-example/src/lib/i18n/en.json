@@ -14,7 +14,8 @@
 
     "nav": {
         "home": "Home",
-        "contact": "Contact"
+        "contact": "Contact",
+        "pref_forecast": "Forecast"
     },
     "home": {
         "title": "Home"

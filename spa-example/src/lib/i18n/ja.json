@@ -13,7 +13,8 @@
     },
     "nav": {
         "home": "ホーム",
-        "contact": "問い合わせ"
+        "contact": "問い合わせ",
+        "pref_forecast": "天気予報"
     },
     "home": {
         "title": "ホーム"

@@ -24,7 +24,7 @@ const config = {
 			directives: {
 				'default-src': ['none'],
 				'script-src': ['self'],
-				'connect-src' : ['self'],
+				'connect-src' : ['self', 'https://www.jma.go.jp'],
 				'style-src' : ['self', 'unsafe-inline'],
 				'img-src': ['self']
 			}

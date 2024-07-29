@@ -57,6 +57,9 @@
 				<li>
 					<a href="{base}/contact" class="hover:text-white">{$str('nav.contact', '問い合わせ')}</a>
 				</li>
+				<li>
+					<a href="{base}/weather/01" class="hover:text-white">{$str('nav.pref_forecast', '天気予報')}</a>
+				</li>
 			</ul>
 		</div>
 		<div class="navbar-end">
@@ -84,7 +87,7 @@
 		</div>
 	</div>
 
-	<main>
+	<main class="min-h-[75vh]">
 		<slot />
 	</main>
 

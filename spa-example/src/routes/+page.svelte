@@ -23,7 +23,7 @@ import { str } from '$lib/i18n/i18n';
 
 <style lang="postcss">
 	.bg-main {
-		height: 70vh;
+		height: 75vh;
 		@apply bg-primary;
 	}
 </style>
