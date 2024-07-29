@@ -24,7 +24,8 @@ const config = {
 			directives: {
 				'default-src': ['none'],
 				'script-src': ['self'],
-				'connect-src' : ['self']
+				'connect-src' : ['self'],
+				'style-src' : ['self']
 			}
 		}
 	}
