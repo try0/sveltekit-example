@@ -25,7 +25,7 @@ const config = {
 				'default-src': ['none'],
 				'script-src': ['self'],
 				'connect-src' : ['self'],
-				'style-src' : ['self'],
+				'style-src' : ['self', 'unsafe-inline'],
 				'img-src': ['self']
 			}
 		}
