@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
-	import { superForm, setMessage, setError, superValidateSync } from 'sveltekit-superforms/client';
+	import { superForm, setMessage, setError,  defaults } from 'sveltekit-superforms/client';
+	import { zod } from 'sveltekit-superforms/adapters';
+
 	import { z } from 'zod';
 	import { str } from '$lib/i18n/i18n';
 
@@ -33,9 +35,10 @@
 	/**
 	 * フォーム初期化
 	 */
-	const { form, errors, message, enhance } = superForm(superValidateSync(contactFormSchema), {
+	const { form, errors, message, enhance } = superForm(defaults(zod(contactFormSchema)), {
 		SPA: true,
-		validators: contactFormSchema,
+		validators: zod(contactFormSchema),
+		resetForm: false,
 		onUpdate({ form }) {
 			console.log('onUpdate');
 
