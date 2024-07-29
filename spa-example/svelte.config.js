@@ -18,6 +18,14 @@ const config = {
 		),
 		paths: {
 			base: dev ? "" : "/sveltekit-example"
+		},
+		csp: {
+			mode: 'hash',
+			directives: {
+				'default-src': ['none'],
+				'script-src': ['self'],
+				'connect-src' : ['self']
+			}
 		}
 	}
 };
